@@ -1,34 +1,48 @@
+# -------------------------
 # Prerequisites
+# -------------------------
 *.d
 
-# Object files
+# -------------------------
+# Compiled Object files
+# -------------------------
 *.o
 *.ko
 *.obj
 *.elf
 
+# -------------------------
 # Linker output
+# -------------------------
 *.ilk
 *.map
 *.exp
 
+# -------------------------
 # Precompiled Headers
+# -------------------------
 *.gch
 *.pch
 
+# -------------------------
 # Libraries
+# -------------------------
 *.lib
 *.a
 *.la
 *.lo
 
-# Shared objects (inc. Windows DLLs)
+# -------------------------
+# Shared objects / DLLs
+# -------------------------
 *.dll
 *.so
 *.so.*
 *.dylib
 
+# -------------------------
 # Executables
+# -------------------------
 *.exe
 *.out
 *.app
@@ -36,13 +50,18 @@
 *.x86_64
 *.hex
 
+# -------------------------
 # Debug files
+# -------------------------
 *.dSYM/
 *.su
 *.idb
 *.pdb
+*.dwo
 
+# -------------------------
 # Kernel Module Compile Results
+# -------------------------
 *.mod*
 *.cmd
 .tmp_versions/
@@ -51,5 +70,51 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# debug information files
-*.dwo
+# -------------------------
+# Visual Studio / MSBuild
+# -------------------------
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.VC.opendb
+*.tlog
+*.log
+
+# Build folders
+Debug/
+Release/
+x64/
+x86/
+ARM/
+ARM64/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+ipch/
+
+# VS project user-specific
+*.vcxproj.user
+
+# -------------------------
+# Editor / IDE settings
+# -------------------------
+.vscode/
+.idea/
+
+# -------------------------
+# OS generated files
+# -------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -------------------------
+# Project-specific (Chess)
+# -------------------------
+# 게임 실행 중 생성될 수 있는 로그/기보/세이브 파일
+*.log
+*.pgn
+*.sav

@@ -1,7 +1,31 @@
 #include "input.h"
 #include <string.h>
 #include <ctype.h>
-#include <stdio.h>
+
+
+bool ReadInput_from(INPUT* input)
+{
+
+}
+
+static bool read_token(char* input, size_t max_InputSize, const char* prompt)
+{
+    if (prompt)
+    {
+        fputs(prompt, stdout);
+        fflush(stdout);
+    }
+
+    if (!fgets(input, max_InputSize, stdin))
+    {
+        input = '\0';
+        return false;
+    }
+
+    size_t n = strcspn(input, "\r\n");
+    input[n] = '\0';
+    return true;
+}
 
 void input_init(INPUT* input)
 {

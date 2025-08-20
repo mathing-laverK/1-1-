@@ -18,12 +18,12 @@ void chess_init(CHESS* game)
     Board_init(&game->board);//보드 초기화+기물 초기화(기물 위치 초기화+기물 종류에 따라 함수 포인터 연결)+기물 출력
 }
 
-void chess_run(CHESS* game)
+void chess_run(CHESS* game)//다른 객체들이 반환한 값에 따라 게임을 어떻게 진행할지 결정하는 객체임
 {
     printf("=>chess_run function/chess.c\n");
     while (game->state.game_status == IN_PROGRESS)
     {
-        int ItIsDraw_agree=0;
+        int ItIsDraw_agree=0;//합의 무승부인 경우 다른 조건 없이 무조건 게임이 종료되어야하므로 이중 while을 탈출하기 위해 내부 while에서 변수값이 합의 무승부 여부에 따라 변화하면 외부 while에서도 탈출이 가능하도록 함
         while(1)
         {
             if (game->current_color == COLOR_WHITE)
@@ -34,6 +34,7 @@ void chess_run(CHESS* game)
             Board_display(&game->board);          
 
             //일반적인 입력과 움직임에 대한 타당성 부분: (1)입력값의 유효성 (2)움직임 타당성 평가
+            // 입력관련은 input.c에서 담당하는게 옳음->옮겨야함
             while (1)
             {
                 printf("Select the square containing the piece you want to move: \n");
@@ -75,6 +76,7 @@ void chess_run(CHESS* game)
             if (ItIsDraw_agree == 1)
                 break;
 
+            // 입력관련은 input.c에서 담당하는게 옳음->옮겨야함
             while(1)           
             {
                 printf("Select which square you want to move the piece to: \n");
@@ -114,9 +116,8 @@ void chess_run(CHESS* game)
                 continue;
             }
 
-            
-        castling_move:
             CHESS moveCastling_IsValid;
+        castling_move:
             moveCastling_IsValid.state.is_valid = false;
             moveCastling_IsValid.state.is_valid = is_castling(&game->board, game->input.For_row, game->input.For_col, game->input.To_row, game->input.To_col);
             if (value_move == true && value_check == false)

@@ -2,6 +2,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void print_CurrentColor(COLOR* current_color)
+{
+    if (*current_color == COLOR_WHITE)
+        printf("\n--¹é ÀÚ·Ê--\n");
+    else if (*current_color == COLOR_BLACK)
+        printf("\n--Èæ ÀÚ·Ê--\n");
+    else
+        printf("\n invalid. current_color undefined\n");
+
+}
+
 void state_init(STATE* state)
 {
     printf("=>state_init function/state.c\n");

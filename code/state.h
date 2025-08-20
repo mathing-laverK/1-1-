@@ -36,4 +36,6 @@ bool is_valid(struct BOARD board, COLOR current_color, int frow, int fcol, int t
 bool is_check(struct BOARD board, COLOR current_color, int frow, int fcol, int trow, int tcol);
 bool is_castling(struct BOARD* board, int frow, int fcol, int trow, int tcol);
 
+void print_CurrentColor(COLOR* current_color);
+
 #endif

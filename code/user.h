@@ -2,6 +2,7 @@
 #define USER_H
 
 #include "color.h"
+#include <stdbool.h>
 
 typedef struct {
     char name[20];
@@ -11,5 +12,6 @@ typedef struct {
 
 void user1_init(USER* user1);
 void user2_init(USER* user2);
+static bool read_token(char* name, size_t max_InputSize, const char* prompt);
 
 #endif //user.h

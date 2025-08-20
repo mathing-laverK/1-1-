@@ -5,7 +5,12 @@
 
 bool ReadInput_from(INPUT* input)
 {
+    return read_token(&input->For_user_input, sizeof(input->For_user_input), "움직이고 싶은 기물의 위치를 입력해주세요. (ex. e2): ");
+}
 
+bool ReadInput_to(INPUT* input)
+{
+    return read_token(&input->To_user_input, sizeof(input->To_user_input), "어디로 움직일지 입력해주세요. (ex. e4): ");
 }
 
 static bool read_token(char* input, size_t max_InputSize, const char* prompt)
